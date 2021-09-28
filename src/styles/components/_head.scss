@@ -1,0 +1,21 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+}
+
+.header-img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background-color: $primary-color;
+  margin: 1rem;
+}
+.header-user {
+  color: white;
+}
