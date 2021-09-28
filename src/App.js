@@ -1,17 +1,20 @@
 import { BrowserRouter } from "react-router-dom";
 
-import Head from './components/Head'
-import Main from './components/Main'
-import Footer from './components/Footer'
-import './styles/styles.scss'
+import { userContext } from "./Contexts/newsContext";
+import Head from "./components/Head";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import "./styles/styles.scss";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Head />
-      <Main />
-      <Footer />
+        <userContext.Provider>
+          <Head />
+          <Main />
+        </userContext.Provider>
+        <Footer />
       </BrowserRouter>
     </div>
   );
