@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 import { userContext } from "./Contexts/newsContext";
@@ -6,18 +7,35 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import "./styles/styles.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <userContext.Provider>
-          <Head />
-          <Main />
-        </userContext.Provider>
-        <Footer />
-      </BrowserRouter>
-    </div>
-  );
-}
+export default class App extends Component {
+  constructor(props) {
+    super(props);
 
-export default App;
+    this.state = {
+      user: { name: "" },
+    };
+  }
+
+  newName = (name) => {
+    this.setState({
+      user: { name: name },
+    });
+  };
+  render() {
+    const user = {
+      name: this.state.user.name,
+      newName: this.newName,
+    };
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <userContext.Provider value={user}>
+            <Head />
+            <Main />
+          </userContext.Provider>
+          <Footer />
+        </BrowserRouter>
+      </div>
+    );
+  }
+}

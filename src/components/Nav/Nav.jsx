@@ -38,10 +38,14 @@ class Nav extends Component {
               </Link>
             </li>
             <li className="nav__nav-element">
-              <Link to="/formulary" onClick={() => this.closeMenu()}>Inputs</Link>
+              <Link to="/formulary" onClick={() => this.closeMenu()}>
+                Inputs
+              </Link>
             </li>
             <li className="nav__nav-element">
-              <Link to="/news" onClick={() => this.closeMenu()}>News</Link>
+              <Link to="/news" onClick={() => this.closeMenu()}>
+                News
+              </Link>
             </li>
           </ul>
         </Menu>
