@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
 import { FloatingLabel, Row, Col, Form, Button } from "react-bootstrap";
-
 class NewsForm extends Component {
   constructor(props) {
     super(props);
@@ -38,9 +38,19 @@ class NewsForm extends Component {
     }
   };
 
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({
+      isAdded: true,
+    });
+  };
+
   render() {
-    return (
-      <Form className="input__card">
+    return this.state.isAdded === true ? (
+      <Redirect to="/news" />
+    ) : (
+      <Form className="input__card" onSubmit={this.addNews}>
         <Row className="mb-3">
           <Form.Group as={Col}>
             <Form.Label>News Source</Form.Label>
@@ -89,7 +99,7 @@ class NewsForm extends Component {
           />
         </FloatingLabel>
 
-        <Button variant="primary" onClick={this.addNews}>
+        <Button variant="primary" type="submit" onClick={this.handleSubmit}>
           Add Record
         </Button>
       </Form>

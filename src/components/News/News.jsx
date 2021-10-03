@@ -31,8 +31,6 @@ class News extends Component {
 
   render() {
     const news = this.state.news;
-    const record = this.props.record;
-    console.log(record, "report");
     if (news.length === 0) {
       return (
         <section className="news-spinner">
