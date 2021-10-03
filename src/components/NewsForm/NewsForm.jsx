@@ -50,6 +50,8 @@ class NewsForm extends Component {
     return this.state.isAdded === true ? (
       <Redirect to="/news" />
     ) : (
+      <div className="input">
+        <h2>Add your own Article</h2>
       <Form className="input__card" onSubmit={this.addNews}>
         <Row className="mb-3">
           <Form.Group as={Col}>
@@ -103,6 +105,7 @@ class NewsForm extends Component {
           Add Record
         </Button>
       </Form>
+      </div>
     );
   }
 }
