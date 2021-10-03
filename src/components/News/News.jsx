@@ -15,7 +15,7 @@ class News extends Component {
     const resp = await axios.get(
       "https://newsapi.org/v2/top-headlines?country=gb&category=technology&sortBy=popularity&apiKey=ff9bee2e53de421897bf8f64963f39c2"
     );
-    // use only the first 5 news
+    // use only the first 5 news + the articles created by user
     const result = await resp.data.articles.slice(0, 5);
     this.setState({
       news: [...result, ...this.props.record],
