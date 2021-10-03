@@ -67,11 +67,12 @@ class Home extends Component {
         <h1>Welcome, {this.state.name}</h1>
         <div className="button__container">
           <Link to="/news">
-            <button className="button">Go to News</button>
+          <Button variant="outline-primary" size='lg'>News</Button>
           </Link>
-          <button className="button" onClick={this.handleLocalStorage}>
-            Change Your Name
-          </button>
+          <Link to="/formulary">
+          <Button variant="outline-primary" size='lg'>Create your Article</Button>
+          </Link>
+          <Button variant="outline-primary" size='lg' onClick={this.handleLocalStorage}>Change Name</Button>
         </div>
       </section>
     );
