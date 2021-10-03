@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 @import url(https://use.fontawesome.com/releases/v5.15.4/css/all.css);
 .card {
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   position: relative;
   overflow: hidden;
   margin: 10px;
@@ -29,7 +29,7 @@
   border-style: solid;
   border-width: 25px 0 25px 25px;
   border-color: transparent transparent transparent #d2652d;
-  content: '';
+  content: "";
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
   -webkit-transition: all 0.3s ease;
@@ -113,10 +113,19 @@
 }
 
 .card a {
-    text-decoration: none;
-    color: #999999;
+  text-decoration: none;
+  color: #999999;
 }
 
+.card button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
 .card:hover:after,
 .card.hover:after {
   -webkit-transform: translateX(0%);
