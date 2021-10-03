@@ -13,19 +13,20 @@ class Head extends Component {
 
   render() {
     return (
+        <>
       <header className="header">
         <Link to="/">
           <img className="header-img" src={logo} alt="News App Logo" />
         </Link>
-        <div className="header-user">
-          <userContext.Consumer>
-            {({ name }) => (name ? <p> Hola, {name}</p> : null)}
-          </userContext.Consumer>
-        </div>
         <Nav />
+          <userContext.Consumer>
+            {({ name }) => (name ? <div className="header__user"><hr /><p> <i className='fa fa-user'></i> Hola, {name}</p></div>: null)}
+          </userContext.Consumer>
       </header>
+        </>
     );
   }
 }
+
 
 export default Head;

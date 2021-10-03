@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import ListNews from "../ListNews";
-
+import { Spinner } from "react-bootstrap";
 class News extends Component {
   constructor(props) {
     super(props);
@@ -21,20 +21,20 @@ class News extends Component {
       news: [...result, ...this.props.record],
     });
   };
-// Todo: Add load more button
+  // Todo: Add load more button
 
   componentDidMount() {
     this.getNews();
   }
 
-// TODO: add a spinner
-
   render() {
     const news = this.state.news;
     if (news.length === 0) {
       return (
-        <section className="news-spinner">
-          Cargando...
+        <section className="news__spinner">
+          <Spinner animation="border" variant="primary">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
         </section>
       );
     } else {
