@@ -15,6 +15,14 @@ class ListNews extends Component {
     });
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.info !== this.props.info) {
+      this.setState({
+        news: this.props.info,
+      });
+    }
+  }
+
   paintNews = () => {
     return this.state.news.map((record, index) => (
       <Card

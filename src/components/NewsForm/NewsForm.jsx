@@ -17,8 +17,6 @@ class NewsForm extends Component {
     };
   }
 
-  //TODO: Redirect to news page
-
   addNews = (event) => {
     event.preventDefault();
 
