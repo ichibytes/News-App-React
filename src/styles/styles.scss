@@ -1,17 +1,17 @@
 // Components Imports
 
-@import "./components/card";
-@import "./components/footer";
-@import "./components/form";
-@import "./components/head";
-@import "./components/home";
-@import "./components/listNews";
-@import "./components/main";
-@import "./components/nav";
+@import "./components/_card";
+@import "./components/_form";
+@import "./components/_head";
+@import "./components/_home";
+@import "./components/_newsForm";
+@import "./components/_main";
+@import "./components/_nav";
+@import "./components/_news";
 
 // Utils Imports
-@import "./utils/mixins";
-@import "./utils/variables";
+@import "./utils/_mixins";
+@import "./utils/_variables";
 
 // Views Imports
-@import "./views/app";
+@import "./views/_app";
