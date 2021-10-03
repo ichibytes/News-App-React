@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "../Home";
-import Form from "../Form";
+import NewsForm from "../NewsForm";
 import News from "../News";
 import "../../styles/components/_main.scss";
 
@@ -25,7 +25,7 @@ class Main extends Component {
           <Route path="/" component={Home} exact />
           <Route
             path="/formulary"
-            component={() => <Form addRecord={this.addRecord} />}
+            component={() => <NewsForm addRecord={this.addRecord} />}
           />
           <Route
             path="/news"
