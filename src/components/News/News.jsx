@@ -21,7 +21,6 @@ class News extends Component {
       news: [...result, ...this.props.record],
     });
   };
-  // Todo: Add load more button
 
   componentDidMount() {
     this.getNews();
