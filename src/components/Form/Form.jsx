@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -14,8 +15,6 @@ class Form extends Component {
       isAdded: false,
     };
   }
-
-  //TODO: Redirect to news page
 
   addNews = (event) => {
     event.preventDefault();
@@ -36,9 +35,18 @@ class Form extends Component {
     }
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({
+      isAdded: true,
+    });
+  };
+
   render() {
-    return (
-      <form>
+    return this.state.isAdded === true ? (
+      <Redirect to="/news" />
+    ) : (
+      <form onSubmit={this.addNews}>
         <h1>Add your Article</h1>
         Author: <input type="text" ref={this.author} />
         Title: <input type="text" ref={this.title} />
@@ -46,7 +54,9 @@ class Form extends Component {
         Img: <input type="url" ref={this.img} />
         Content: <input type="text" ref={this.content} />
         Source: <input type="text" ref={this.source} />
-        <button onClick={this.addNews}>Add news</button>
+        <button type="submit" onClick={this.handleSubmit}>
+          Add news
+        </button>
       </form>
     );
   }
