@@ -6,7 +6,7 @@ class NewsForm extends Component {
     super(props);
 
     this.title = React.createRef();
-    this.url = React.createRef();
+    this.urlToImage = React.createRef();
     this.img = React.createRef();
     this.content = React.createRef();
     this.source = React.createRef();
@@ -23,14 +23,14 @@ class NewsForm extends Component {
     event.preventDefault();
 
     const title = this.title.current.value;
-    const url = this.url.current.value;
+    const urlToImage = this.urlToImage.current.value;
     const img = this.img.current.value;
     const content = this.content.current.value;
     const source = this.source.current.value;
 
-    if (title && url && img && content && source) {
+    if (title && urlToImage && img && content && source) {
       const publishedAt = new Date().toISOString();
-      const record = { title, url, img, content, source, publishedAt };
+      const record = { title, urlToImage, img, content, source, publishedAt };
       this.props.addRecord(record);
     } else {
       // TODO: create modal
@@ -40,64 +40,59 @@ class NewsForm extends Component {
 
   render() {
     return (
-      // <form>
-      //   Content: <input type="text" ref={this.content} />
-      // </form>
-      <form className="input__card">
-        <Form>
-          <Row className="mb-3">
-            <Form.Group as={Col}>
-              <Form.Label>News Source</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter News Source"
-                ref={this.source}
-              />
-            </Form.Group>
-            <Form.Group as={Col}>
-              <Form.Label>Title</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Title"
-                ref={this.title}
-              />
-            </Form.Group>
-          </Row>
-
-          <Row className="mb-3">
-            <Form.Group as={Col}>
-              <Form.Label>Link to the Article</Form.Label>
-              <Form.Control
-                type="url"
-                placeholder="https://linktothearticle.com"
-                ref={this.url}
-              />
-            </Form.Group>
-
-            <Form.Group as={Col}>
-              <Form.Label>Image source</Form.Label>
-              <Form.Control
-                type="url"
-                placeholder="https://yourimgurl.com"
-                ref={this.img}
-              />
-            </Form.Group>
-          </Row>
-            <Form.Label>Article Content</Form.Label>
-          <FloatingLabel controlId="floatingTextarea2">
+      <Form className="input__card">
+        <Row className="mb-3">
+          <Form.Group as={Col}>
+            <Form.Label>News Source</Form.Label>
             <Form.Control
-              as="textarea"
-              placeholder="Insert the article content"
-              style={{ height: "100px" }}
-              ref={this.content}
+              type="text"
+              placeholder="Enter News Source"
+              ref={this.source}
             />
-          </FloatingLabel>
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Title"
+              ref={this.title}
+            />
+          </Form.Group>
+        </Row>
 
-          <Button variant="primary" onClick={this.addNews}>
-            Add Record
-          </Button>
-        </Form>
-      </form>
+        <Row className="mb-3">
+          <Form.Group as={Col}>
+            <Form.Label>Link to the Article</Form.Label>
+            <Form.Control
+              type="url"
+              placeholder="https://linktothearticle.com"
+              ref={this.urlToImage}
+            />
+          </Form.Group>
+
+          <Form.Group as={Col}>
+            <Form.Label>Image source</Form.Label>
+            <Form.Control
+              type="url"
+              placeholder="https://yourimgurl.com"
+              ref={this.img}
+            />
+          </Form.Group>
+        </Row>
+        <Form.Label>Article Content</Form.Label>
+        <FloatingLabel controlId="floatingTextarea2">
+          <Form.Control
+            as="textarea"
+            placeholder="Insert the article content"
+            style={{ height: "100px" }}
+            ref={this.content}
+          />
+        </FloatingLabel>
+
+        <Button variant="primary" onClick={this.addNews}>
+          Add Record
+        </Button>
+      </Form>
     );
   }
 }
