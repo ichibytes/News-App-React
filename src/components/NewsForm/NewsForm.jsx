@@ -17,8 +17,6 @@ class NewsForm extends Component {
     };
   }
 
-  //TODO: Redirect to news page
-
   addNews = (event) => {
     event.preventDefault();
 
@@ -33,7 +31,6 @@ class NewsForm extends Component {
       const record = { title, urlToImage, img, content, source, publishedAt };
       this.props.addRecord(record);
     } else {
-      // TODO: create modal
       alert("Fill all fields");
     }
   };

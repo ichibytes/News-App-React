@@ -25,7 +25,6 @@ class News extends Component {
   
   componentDidMount() {
     this.getNews();
-    console.log(process.env.REACT_APP_API_KEY)
   }
 
   render() {
