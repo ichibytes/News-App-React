@@ -6,7 +6,7 @@ class Card extends Component {
     // Transform the info from publishedAt to a readable format for design
     const dateTaken = info.publishedAt;
     const yearTaken = dateTaken.substring(0, 4);
-    const monthTaken = dateTaken.substring(6, 7);
+    const monthTaken = dateTaken.substring(5, 7) - 1;
     const dayTaken = dateTaken.substring(8, 10);
     const date = new Date(yearTaken, monthTaken, dayTaken);
     const day = date.toString().substring(8, 10);

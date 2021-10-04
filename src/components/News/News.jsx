@@ -12,8 +12,9 @@ class News extends Component {
   }
 
   getNews = async () => {
+    const API_KEY = process.env.REACT_APP_API_KEY
     const resp = await axios.get(
-      "https://newsapi.org/v2/top-headlines?country=gb&category=technology&sortBy=popularity&apiKey=ff9bee2e53de421897bf8f64963f39c2"
+      `https://newsapi.org/v2/top-headlines?country=gb&category=technology&sortBy=popularity&apiKey=${API_KEY}`
     );
     // use only the first 5 news + the articles created by user
     const result = await resp.data.articles.slice(0, 5);
@@ -21,7 +22,7 @@ class News extends Component {
       news: [...result, ...this.props.record],
     });
   };
-
+  
   componentDidMount() {
     this.getNews();
   }
