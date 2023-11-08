@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+[![Build Status](https://jenkins.ichibytes.dev/buildStatus/icon?job=ichibytes%2FNews-App-React%2Ffeature%252Fjenkins)](https://jenkins.ichibytes.dev/job/ichibytes/job/News-App-React/job/feature%252Fjenkins/)
+
 ## Available Scripts
 
 In the project directory, you can run:
