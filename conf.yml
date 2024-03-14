@@ -1,0 +1,4 @@
+repoName: "News-App-React"
+
+## SonarQube configuration
+sonarSource: "src/"
